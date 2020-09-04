@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내집꾸미기</title>
+    <script src="./resources/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="./resources/bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="./resources/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./resources/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./resources/css/style.css">
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <header class="no-visual">
+        <!-- GNB -->
+        <div id="gnb">
+            <div class="h-100 d-between align-items-lg-end py-lg-3 px-4">
+                <a href="./index.html">
+                    <img src="./resources/images/logo.svg" alt="내집꾸미기" title="내집꾸미기" height="60">
+                </a> 
+                <div class="nav position-center d-none d-lg-flex mt-2">
+                    <a href="./index.html">
+                        <span class="icon mb-2">
+                            <i class="fa-2x fa fa-home"></i>
+                        </span>
+                        홈
+                    </a>
+                    <a href="#">
+                        <span class="icon mb-2">
+                            <i class="fa-2x fa fa-search"></i>
+                        </span>
+                        온라인 집들이
+                    </a>
+                    <a href="./store.html">
+                        <span class="icon mb-2">
+                            <i class="fa-2x fa fa-shopping-cart"></i>
+                        </span>
+                        스토어
+                    </a>
+                    <a href="#">
+                        <span class="icon mb-2">
+                            <i class="fa-2x fa fa-user-secret"></i>
+                        </span>
+                        전문가
+                    </a>
+                    <a href="#">
+                        <span class="icon mb-2">
+                            <i class="fa-2x fa fa-file-text"></i>
+                        </span>
+                        시공 견적
+                    </a>
+                </div>
+                <div>
+                    <div class="auth d-none d-lg-flex">
+                        <a href="#">로그인</a>
+                        <a href="#">회원가입</a>
+                    </div>
+                    <div class="menu-icon d-lg-none">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="menu d-lg-none">
+                        <div class="inner">
+                            <div class="m-nav">
+                                <a href="./index.html">홈</a>
+                                <a href="#">온라인 집들이</a>
+                                <a href="./store.html">스토어</a>
+                                <a href="#">전문가</a>
+                                <a href="#">시공 견적</a>
+                            </div>
+                            <div class="m-auth">
+                                <a href="#">로그인</a>
+                                <a href="#">회원가입</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /GNB -->
+    </header>
+    <!-- /헤더 영역 -->
+
+    <!-- 장바구니 영역 -->
+    <div class="container padding">
+        <div class="py-4 sticky-top bg-white">
+            <span class="text-muted">장바구니</span>
+            <div class="title">CART</div>
+            <div class="table-head">
+                <div class="cell-50">상품 정보</div>
+                <div class="cell-15">가격</div>
+                <div class="cell-10">수량</div>
+                <div class="cell-15">합계</div>
+                <div class="cell-10">+</div>
+            </div>
+        </div>
+        <div id="cart-list">
+            <div class="w-100 py-5 text-center fx-n2 text-muted">장바구니에 담긴 상품이 없습니다.</div>
+        </div>
+        <div class="mt-4 d-between">
+            <div>
+                <span class="text-muted">총 합계</span>
+                <span class="total-price ml-3 text-gold fx-3">0</span>
+                <small class="text-muted">원</small>
+            </div>
+            <button class="button-label" data-target="#buy-modal" data-toggle="modal">
+                구매하기
+                <i class="fa fa-shopping-cart ml-3"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /장바구니 영역 -->
+
+    <!-- 스토어 영역 -->
+    <div class="bg-gray">
+        <div class="container padding">
+            <div class="pt-4 sticky-top bg-gray d-between mb-4 border-bottom pb-3">
+                <div>
+                    <span class="text-muted">인테리어 스토어</span>
+                    <div class="title blue">STORE</div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <input type="checkbox" id="open-cart" hidden checked>
+                    <div class="search">
+                        <span class="icon"><i class="fa fa-search"></i></span>
+                        <input type="text" placeholder="검색어를 입력해 주세요">
+                    </div>
+                    <label for="open-cart" class="ml-4 mr-5 text-blue">
+                        <i class="fa fa-shopping-cart fa-lg"></i>
+                    </label>
+                    <div id="drop-area">
+                        <div class="text-center text-white">
+                            <div class="success position-center">
+                                <i class="fa fa-check fa-3x"></i>
+                                <p class="mt-4 text-nowrap fx-n2">장바구니에 상품이 등록되었습니다!</p>
+                            </div>
+                            <div class="error position-center">
+                                <i class="fa fa-times fa-3x"></i>
+                                <p class="mt-4 text-nowrap fx-n2">이미 장바구니에 담긴 상품입니다.</p>
+                            </div>
+                            <div class="normal position-center">
+                                <i class="fa fa-shopping-cart fa-3x"></i>
+                                <p class="mt-4 text-nowrap fx-n2">이곳에 상품을 넣어주세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="store-list" class="row">
+                <div class="w-100 py-5 text-center fx-n2 text-muted">일치하는 상품이 없습니다.</div>
+            </div>
+        </div>
+    </div>
+    <!-- /스토어 영역 -->
+
+    <!-- 구매하기 --> 
+    <div id="buy-modal" class="modal fade">
+        <div class="modal-dialog">
+            <form class="modal-content">
+                <div class="modal-body pt-4 pb-3 px-4">
+                    <div class="title text-center">
+                        BUY ITEM
+                    </div>
+                    <div class="mt-4 form-group">
+                        <label for="user_name">구매자</label>
+                        <input type="text" id="user_name" class="form-control" name="user_name" placeholder="이름을 입력하세요" required>
+                    </div>
+                    <div class="mt-1 form-group">
+                        <label for="address">주소</label>
+                        <input type="text" id="address" class="form-control" name="address" placeholder="주소를 입력하세요" required>
+                    </div>
+                    <div class="mt-3 form-group">
+                        <button class="w-100 py-3 text-white bg-blue">
+                            구매 완료
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="view-modal" class="modal fade">
+        <div class="modal-dialog"></div>
+        <img alt="구매 내역" class="mw-100 mx-3 position-center">
+    </div>
+    <!-- /구매하기 -->
+
+    <script src="./resources/js/Product.js"></script>
+    <script src="./resources/js/Store.js"></script>
+
+    <!-- 푸터 영역 -->
+    <footer class="py-3 bg-darkblue text-gray text-center fx-n2">
+        Copyright (C) 2020 by MyHome Inc All Rights Reserved.
+    </footer>
+    <!-- /푸터 영역 -->
+</body>
+</html>
